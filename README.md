@@ -34,6 +34,13 @@ This project aims to solve this real-life problem by using a sensor-based system
 5. Output is displayed in mobile-style interface  
 
 ---
+---
+
+## 📱 System Design
+
+![System Design](image.png)
+
+---
 
 ## 🖥️ Code
 Run the program:
