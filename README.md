@@ -34,13 +34,14 @@ This project aims to solve this real-life problem by using a sensor-based system
 5. Output is displayed in mobile-style interface  
 
 ---
----
-
 ## 📱 System Design
 
-![System Design](image.png)
+<p align="center">
+  <img src="image.png" width="400"/>
+</p>
 
 ---
+
 
 ## 🖥️ Code
 Run the program:
