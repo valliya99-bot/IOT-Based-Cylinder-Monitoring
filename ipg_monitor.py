@@ -1,41 +1,102 @@
 # Smart LPG Gas Monitoring & Leak Detection System
+# Smart LPG Gas Monitoring & Leak Detection System
 
-## 📌 Description
-In many households, hostels, and restaurants, people often do not know how much LPG gas is left in the cylinder. This can lead to sudden gas exhaustion and inconvenience during daily activities. Additionally, unnoticed gas leakage can be dangerous.
+import time
+from datetime import datetime
+import random
 
-This project aims to solve this real-life problem by using a sensor-based system to monitor gas levels and detect abnormal usage. Python is used to process the data and provide real-time information along with alerts.
+# ---------------- USER INPUT ----------------
+MAX_WEIGHT = float(input("Enter full cylinder weight (kg): "))
+EMPTY_WEIGHT = float(input("Enter empty cylinder weight (kg): "))
 
----
+# ---------------- CONFIGURATION ----------------
+LOW_GAS_THRESHOLD = 20   # Percentage
+LEAK_THRESHOLD = 1.5     # Abnormal usage multiplier
 
-## 🎯 Objectives
-- To monitor LPG gas level in real-time  
-- To alert users when gas is low  
-- To detect possible gas leakage  
-- To analyze daily gas usage  
-- To improve safety and convenience  
+# ---------------- STORAGE ----------------
+history = []
+last_weight = None
+last_time = None
 
----
+# ---------------- SENSOR SIMULATION ----------------
+def read_sensor(base_weight):
+    """
+    Simulates sensor reading by reducing weight gradually
+    """
+    variation = random.uniform(0.1, 0.5)
+    return max(base_weight - variation, EMPTY_WEIGHT)
 
-## 🚀 Features
-- ⛽ Gas Level Monitoring  
-- 📡 Real-Time Tracking  
-- ⚠️ Low Gas Alert  
-- 🔥 Gas Leak Detection  
-- 📊 Usage Analysis  
-- 📱 Mobile Style Output  
+# ---------------- CALCULATIONS ----------------
+def calculate_gas(weight):
+    gas_left = max(weight - EMPTY_WEIGHT, 0)
+    total_gas = MAX_WEIGHT - EMPTY_WEIGHT
+    percent = (gas_left / total_gas) * 100
+    return round(gas_left, 2), round(percent, 2)
 
----
+def calculate_usage(current, previous, hours):
+    if previous is None or hours <= 0:
+        return 0
+    return round((previous - current) / hours, 3)
 
-## ⚙️ How It Works
-1. Sensor measures cylinder weight  
-2. Data is sent to the system  
-3. Python calculates gas level and usage  
-4. Alerts are generated for low gas or leaks  
-5. Output is displayed in mobile-style interface  
+# ---------------- ALERT SYSTEM ----------------
+def check_low_gas(percent):
+    if percent <= LOW_GAS_THRESHOLD:
+        print("⚠ ALERT: Low Gas! Refill soon.")
 
----
+def check_leak(usage, avg_usage=0.4):
+    if usage > avg_usage * LEAK_THRESHOLD:
+        print("🚨 WARNING: Possible Gas Leak Detected!")
 
-## 🖥️ Code
-Run the program:
-```bash
-python lpg_monitor.py
+# ---------------- MAIN PROGRAM ----------------
+print("\nSmart LPG Monitoring System Started...\n")
+
+# Initial weight taken from user (real cylinder weight)
+current_weight = float(input("Enter current cylinder weight (kg): "))
+
+for _ in range(5):  # simulate readings
+
+    current_time = datetime.now()
+
+    # Simulate next reading
+    current_weight = read_sensor(current_weight)
+
+    gas_left, percent = calculate_gas(current_weight)
+
+    # Time difference
+    if last_time:
+        hours = (current_time - last_time).total_seconds() / 3600
+    else:
+        hours = 0
+
+    usage = calculate_usage(current_weight, last_weight, hours)
+
+    # Store data
+    history.append({
+        "time": current_time.strftime("%Y-%m-%d %H:%M:%S"),
+        "weight": current_weight,
+        "gas_left": gas_left,
+        "percent": percent,
+        "usage": usage
+    })
+
+    # Display (like mobile output)
+    print("----- LPG STATUS -----")
+    print("Time:", current_time.strftime("%H:%M:%S"))
+    print("Weight:", round(current_weight, 2), "kg")
+    print("Gas Left:", gas_left, "kg")
+    print("Percentage:", percent, "%")
+    print("Usage:", usage, "kg/hr")
+
+    # Alerts
+    check_low_gas(percent)
+    check_leak(usage)
+
+    print("----------------------\n")
+
+    # Update previous values
+    last_weight = current_weight
+    last_time = current_time
+
+    time.sleep(2)
+
+print("Monitoring Completed.")
