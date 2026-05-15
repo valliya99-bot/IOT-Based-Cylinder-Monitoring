@@ -31,7 +31,18 @@ This project aims to solve this real-life problem by using a sensor-based system
 2. Data is sent to the system  
 3. Python calculates gas level and usage  
 4. Alerts are generated for low gas or leaks  
-5. Output is displayed in mobile-style interface  
+5. Output is displayed in mobile-style interface
+
+---
+
+## 🛠️ Technologies Used
+- 🐍 Python – Used for backend processing and calculations  
+- 🌐 IoT (Internet of Things) – Used for real-time monitoring and smart connectivity  
+- ⚖️ Weight Sensor / Load Cell – Used to measure LPG cylinder weight  
+- 📡 Wi-Fi / Bluetooth Communication – Used for transmitting sensor data  
+- 📱 Mobile Style Interface – Used for displaying gas level and alerts  
+- 🧠 Sensor-Based Monitoring – Used for tracking gas usage and leak detection  
+- 💻 GitHub – Used for project hosting and version control
 
 ---
 ## 📱 System Design
