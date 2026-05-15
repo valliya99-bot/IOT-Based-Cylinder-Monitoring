@@ -60,3 +60,9 @@ Run the program:
 
 ```bash
 python lpg_monitor.py
+
+---
+
+## 📜 License
+
+Licensed under the MIT License.
