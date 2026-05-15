@@ -59,8 +59,8 @@ This project aims to solve this real-life problem by using a sensor-based system
 Run the program:
 
 ```bash
-python lpg_monitor.py
-
+python lpg_monitor.py 
+```
 ---
 
 ## 📜 License
