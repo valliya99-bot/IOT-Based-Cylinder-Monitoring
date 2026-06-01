@@ -52,12 +52,10 @@ This project aims to solve this real-life problem by using a sensor-based system
 </p>
 
 ---
----
-
 ## 📱 App UI Interface
 
 <p align="center">
-  <img src="image2.png" width="1000"/>
+  <img src="52658.png" width="1000"/>
 </p>
 
 ---
