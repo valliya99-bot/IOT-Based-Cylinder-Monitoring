@@ -52,7 +52,15 @@ This project aims to solve this real-life problem by using a sensor-based system
 </p>
 
 ---
+---
 
+## 📱 App UI Interface
+
+<p align="center">
+  <img src="image2.png" width="1000"/>
+</p>
+
+---
 
 ## 💻 Code
 
@@ -61,6 +69,21 @@ Run the program:
 ```bash
 python lpg_monitor.py 
 ```
+---
+ ---
+
+## 📱 Frontend & Backend Outputs
+
+<p align="center">
+  <img src="image.png" width="900"/>
+</p>
+
+---
+
+## 👨‍💻 Author
+
+Mehraj Valliya
+
 ---
 
 ## 📜 License
