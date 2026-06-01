@@ -67,6 +67,12 @@ Run the program:
 ```bash
 python lpg_monitor.py 
 ```
+▶️ How to Run
+
+Run this command in:
+- VS Code Terminal
+- Command Prompt
+- PyCharm Terminal
 ---
 ## 💻 Python Backend Outputs
 
