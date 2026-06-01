@@ -52,13 +52,6 @@ This project aims to solve this real-life problem by using a sensor-based system
 </p>
 
 ---
-## 📱 App UI Interface
-
-<p align="center">
-  <img src="52658.png" width="1000"/>
-</p>
-
----
 
 ## 💻 Code
 
@@ -68,10 +61,10 @@ Run the program:
 python lpg_monitor.py 
 ```
 ---
-## 📸 System Output Preview
+## 💻 Python Backend Outputs
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPOSITORY/main/images/lpg-output.png" width="100%" alt="Smart LPG Gas Monitoring System Outputs">
+  <img src="sample outputs.jpg" width="1000"/>
 </p>
 
 ## 👨‍💻 Author
