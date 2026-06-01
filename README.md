@@ -70,15 +70,11 @@ Run the program:
 python lpg_monitor.py 
 ```
 ---
- ---
-
-## 📱 Frontend & Backend Outputs
+## 📸 System Output Preview
 
 <p align="center">
-  <img src="image.png" width="900"/>
+  <img src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPOSITORY/main/images/lpg-output.png" width="100%" alt="Smart LPG Gas Monitoring System Outputs">
 </p>
-
----
 
 ## 👨‍💻 Author
 
