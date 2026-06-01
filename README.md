@@ -55,10 +55,9 @@ This project aims to solve this real-life problem by using a sensor-based system
 ## 📱 App UX/UI Interface
 
 <p align="center">
-  <img src="interfaceimages.jpg" width="450"/>
+  <img src="interfaceuximages.jpg" width="450"/>
   <img src="interfaceimagesux2.jpg" width="450"/>
 </p>
-
 ---
 
 ## 💻 Code
